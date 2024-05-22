@@ -1,0 +1,6 @@
+### Start Confirmation Code
+POST http://localhost:8787/api/confirmation
+content-type: application/json
+
+{}
+

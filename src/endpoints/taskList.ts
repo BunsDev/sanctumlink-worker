@@ -6,7 +6,7 @@ import {
 import { Task } from "../types";
 
 export class TaskList extends OpenAPIRoute {
-	static schema: OpenAPIRouteSchema = {
+	static readonly schema: OpenAPIRouteSchema = {
 		tags: ["Tasks"],
 		summary: "List Tasks",
 		parameters: {
