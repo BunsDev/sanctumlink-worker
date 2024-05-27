@@ -46,8 +46,8 @@ export class RegisterEmail extends OpenAPIRoute {
             type: 'EMAIL',
             flow: confirmationData.flow,
         }), { expirationTtl: 30 * 60 });
-        // TODO: tmp skip sending email
-        // await sendEmail(confirmationData.value, code.toFixed(0), env);
+        // XXX: tmp skip sending email
+        await sendEmail(confirmationData.value, code.toFixed(0), env);
     }
 
     // return the new task
