@@ -15,9 +15,9 @@ compatibility_date = "2024-05-12"
 # - https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
 # Note: Use secrets to store sensitive data.
 # - https://developers.cloudflare.com/workers/configuration/secrets/
-# [vars]
-MAILGUN_DOMAIN = ""
-MAILGUN_API_KEY = ""
+[vars]
+MAILGUN_DOMAIN = "joinwebmobix.tech"
+# MAILGUN_API_KEY = ""
 
 # Bind the Workers AI model catalog. Run machine learning models, powered by serverless GPUs, on Cloudflare’s global network
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#workers-ai
@@ -36,10 +36,10 @@ MAILGUN_API_KEY = ""
 
 # Bind a D1 database. D1 is Cloudflare’s native serverless SQL database.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#d1-databases
-# [[d1_databases]]
-# binding = "MY_DB"
-# database_name = "my-database"
-# database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+[[d1_databases]]
+binding = "sanctumdb"
+database_name = "sanctum-link"
+database_id = "bf6758d6-43c5-4758-b808-899970928af3"
 
 # Bind a dispatch namespace. Use Workers for Platforms to deploy serverless functions programmatically on behalf of your customers.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#dispatch-namespace-bindings-workers-for-platforms
@@ -68,13 +68,13 @@ MAILGUN_API_KEY = ""
 
 # Bind a KV Namespace. Use KV as persistent storage for small key-value pairs.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#kv-namespaces
-# [[kv_namespaces]]
-# binding = "MY_KV_NAMESPACE"
-# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+[[kv_namespaces]]
+binding = "sanctum_link"
+id = "b98401025cbf4e71b37bbcc775db1ad9"
 
-kv_namespaces = [
-  { binding = "sanctum_link", id = "b98401025cbf4e71b37bbcc775db1ad9" }
-]
+# kv_namespaces = [
+#   { binding = "sanctum_link", id = "b98401025cbf4e71b37bbcc775db1ad9" }
+# ]
 
 # Bind an mTLS certificate. Use to present a client certificate when communicating with another service.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#mtls-certificates

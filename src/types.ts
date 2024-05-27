@@ -1,14 +1,17 @@
 import { DateTime, Str } from "@cloudflare/itty-router-openapi";
 
-export const Task = {
-	name: new Str({ example: "lorem" }),
-	slug: String,
-	description: new Str({ required: false }),
-	completed: Boolean,
-	due_date: new DateTime(),
-};
-
-export interface CreateCodeConfirmation {
-	type: string,
-	value: string,
+export enum AttributeTypes {
+    PrimaryEmail = 'PrimaryEmail',
+    NameOfUser = 'NameOfUser',
+    PrimaryPhone = 'PrimaryPhone',
+    DateOfBirth = 'DateOfBirth',
+    BirthCertificateDocument = 'BirthCertificateDocument',
+    CountryOfBirth = 'CountryOfBirth',
+    NationalId = 'NationalId',
+    CurrentCountryOfResidence = 'CurrentCountryOfResidence',
+    CurrentStateOfResidence = 'CurrentStateOfResidence',
+    PrimaryPhysicalAddress = 'PrimaryPhysicalAddress',
+    UtilityBillForPrimaryResidence = 'UtilityBillForPrimaryResidence',
+    Wallet = 'Wallet',
+    Email = 'Email',
 }
