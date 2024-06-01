@@ -67,6 +67,8 @@ export class StoreIdentity extends OpenAPIRoute {
         // attributes
         const info2 = await this.storeAttribute(env, identityId, AttributeTypes.PrimaryEmail, email, '')
         console.log(info2);
+        const info3 = await this.storeAttribute(env, identityId, AttributeTypes.Wallet, account, '')
+        console.log(info3);
     } catch (e) {
       console.error(e);
     }

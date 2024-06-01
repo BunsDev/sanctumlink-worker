@@ -9,6 +9,8 @@ import { StoreIdentity } from "endpoints/StoreIdentity";
 import { DropIdentity } from "endpoints/DropIdentity";
 import { StoreAttribute } from "endpoints/StoreAttribute";
 import { StoreAttributes } from "endpoints/StoreAttributes";
+import { RetrieveAttributes } from "endpoints/RetrieveAttributes";
+import { RetrieveIdentities } from "endpoints/RetrieveIdentities";
 
 export const router = OpenAPIRouter({
   docs_url: "/openapi",
@@ -25,9 +27,11 @@ router.post("/api/v1/confirmation", RegisterEmail);
 router.post("/api/v1/confirmation/:uid", ConfirmationCode);
 
 // contract api
+router.get("/api/v1/identities", RetrieveIdentities);
 router.post("/api/v1/identity/:uid", StoreIdentity);
 router.post("/api/v1/identity/:uid/attribute", StoreAttribute);
 router.post("/api/v1/identity/:uid/attributes", StoreAttributes);
+router.get("/api/v1/identity/:uid/attributes", RetrieveAttributes);
 router.get("/api/v1/identity/:uid", RetrieveIdentity);
 router.delete("/api/v1/identity/:uid", DropIdentity);
 
