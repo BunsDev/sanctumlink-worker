@@ -11,6 +11,8 @@ import { StoreAttribute } from "endpoints/StoreAttribute";
 import { StoreAttributes } from "endpoints/StoreAttributes";
 import { RetrieveAttributes } from "endpoints/RetrieveAttributes";
 import { RetrieveIdentities } from "endpoints/RetrieveIdentities";
+import { StoreAuthentication } from "endpoints/StoreAuthentication";
+import { RetrieveAuthentication } from "endpoints/RetrieveAuthentication";
 
 export const router = OpenAPIRouter({
   docs_url: "/openapi",
@@ -34,6 +36,8 @@ router.post("/api/v1/identity/:uid/attributes", StoreAttributes);
 router.get("/api/v1/identity/:uid/attributes", RetrieveAttributes);
 router.get("/api/v1/identity/:uid", RetrieveIdentity);
 router.delete("/api/v1/identity/:uid", DropIdentity);
+router.post("/api/v1/authentication", StoreAuthentication);
+router.get("/api/v1/authentication/:uid", RetrieveAuthentication);
 
 // ecommerce api
 router.get("/api/v1/product/:uid", RetrieveProduct);
