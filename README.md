@@ -6,7 +6,7 @@
 ![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-orange)
 ![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1-brightgreen)
 
-> SanctumLink Revotulizing web3 kyc protocol.
+> The Sanctum Link Protocol: Revolutionizing Web3 KYC.
 
 This is the backend for the SanctumLink project at the [Chainlink Block Magic 2024 Hackathon](https://chain.link/hackathon). The repository is built using Cloudflare Workers with OpenAPI 3.1, leveraging [itty-router-openapi](https://github.com/cloudflare/itty-router-openapi).
 
