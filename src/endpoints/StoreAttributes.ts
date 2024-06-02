@@ -39,7 +39,7 @@ export class StoreAttributes extends OpenAPIRoute {
   ) {
     const { uid: identityId } = data.params;
     const attributes = data.body;
-    console.log({ identityId });
+    console.log({ identityId, attributes });
 
     // const web3 = new Web3(Web3.givenProvider || "http://localhost:8545"); // no interaction with a node needed here
 
@@ -56,6 +56,7 @@ export class StoreAttributes extends OpenAPIRoute {
         signature,
       } = attribute;
       try {
+        // TODO: add on conflict
         const info = await env.sanctumdb
           .prepare(
             "INSERT INTO Attributes (IdentityId, AttributeType, AttributeValue, AttributeHash) VALUES (?1, ?2, ?3, ?4)"
